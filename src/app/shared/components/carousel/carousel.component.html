@@ -1,0 +1,20 @@
+<div id="carouselControl" class="carousel slide" data-bs-interval="false" (mouseenter)="displayCarouselArrows()" (mouseleave)="hideCarouselArrows()">
+  <!-- Carousel Container -->
+  <div  class="carousel-inner">
+    <div class="carousel-item" [ngClass]="{'active': i===0}" *ngFor="let imageSet of imageSets;let i = index">
+      <div class="d-flex flex-row">
+        <img *ngFor="let image of imageSet" [src]="image"  [alt]="image">
+      </div>
+    </div>
+  </div>
+
+  <!-- Carousel Btns -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselControl" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselControl" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
